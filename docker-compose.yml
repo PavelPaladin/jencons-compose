@@ -1,0 +1,29 @@
+version: '3.7'
+services:
+  jenkins:
+    image: jenkins/jenkins:2.150.3-alpine
+    environment:
+      JAVA_OPTS: -Djenkins.install.runSetupWizard=false
+      JENKINS_OPTS: --argumentsRealm.roles.user=admin --argumentsRealm.passwd.admin=admin --argumentsRealm.roles.admin=admin
+    volumes:
+      - ./jenkins:/var/jenkins_home
+    ports:
+      - 8080:8080
+
+  consul:
+    image: docker.io/bitnami/consul:1
+    volumes:
+      - consul_data:/bitnami/consul
+    ports:
+      - '8300:8300'
+      - '8301:8301'
+      - '8301:8301/udp'
+      - '8500:8500'
+      - '8600:8600'
+      - '8600:8600/udp'
+
+volumes:
+  jenkins:
+    driver: local
+  consul_data:
+    driver: local
