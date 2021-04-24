@@ -4,6 +4,6 @@ WORKDIR /app
 COPY sample_web_pyconsul.py /app
 
 # Install needed stuff
-RUN pip install --no-cache-dir python-consul 
+RUN pip install --no-cache-dir python-consul flask
 EXPOSE 8000
 CMD ["python3", "/app/sample_web_pyconsul.py"]
