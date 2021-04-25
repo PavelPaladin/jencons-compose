@@ -1,6 +1,6 @@
-!jenkins/jobs/pyconsul-clone/config.xml
-!jenkins/jobs/pyconsul-deploy/config.xml
 jenkins/*
-consul_data/*
+!jenkins/jobs
+jenkins/jobs/*
+!jenkins/jobs/*/config.xml
 
 __pycache__
