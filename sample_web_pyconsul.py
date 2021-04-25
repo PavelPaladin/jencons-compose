@@ -1,22 +1,16 @@
 from flask import Flask, request
+import requests
+#import json
+
 app = Flask(__name__)
 
 
 @app.route('/get_value', methods=['GET'])
 def process_get_value():
-    if not request.args:
-        return 'No keys specified', 400
-
-    key_name = list(request.args)[0]
-    # TODO: Get from Consul
-    return f'{key_name}\n'
+    get_value = requests.get("http://172.21.0.2:8500/v1/kv/" + request.args.get('key') + "?raw")
+    return get_value.text
 
 
 @app.route('/set_value', methods=['POST', 'PUT'])
 def process_set_value():
-    if not request.args:
-        return 'No keys specified', 400
-
-    key_name, value = [(k, v) for k, v in request.args.items()][0]
-    # TODO: Set to Consul
-    return f'SET: {key_name} : {value}\n'
+    ## TODO send post

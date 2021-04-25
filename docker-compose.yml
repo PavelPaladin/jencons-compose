@@ -3,21 +3,19 @@ services:
   jenkins:
     image: jenkins/jenkins:lts
     group_add:
-      - $DOCKID #docker group id
+      - $D_ID #docker group id
     environment:
       JAVA_OPTS: -Djenkins.install.runSetupWizard=false
       JENKINS_OPTS: --argumentsRealm.roles.user=admin --argumentsRealm.passwd.admin=admin --argumentsRealm.roles.admin=admin
     volumes:
       - ./jenkins/jobs:/var/jenkins_home/jobs
       - /var/run/docker.sock:/var/run/docker.sock
-      - $DOCKBIN:/usr/bin/docker
+      - $D_SOCK:/usr/bin/docker
     ports:
       - 8080:8080
 
   consul-server:
-    image: docker.io/bitnami/consul:1
-    volumes:
-      - consul_data:/bitnami/consul
+    image: consul
     ports:
       - '8300:8300'
       - '8301:8301'
@@ -38,6 +36,4 @@ services:
 
 volumes:
   jenkins:
-    driver: local
-  consul_data:
     driver: local

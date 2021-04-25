@@ -1,3 +1,5 @@
 !jenkins/jobs/*/config.xml
 jenkins/*
 consul_data/*
+
+__pycache__
