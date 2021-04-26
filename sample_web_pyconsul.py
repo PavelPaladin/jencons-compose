@@ -7,10 +7,12 @@ app = Flask(__name__)
 
 @app.route('/get_value', methods=['GET'])
 def process_get_value():
-    get_value = requests.get("http://172.21.0.2:8500/v1/kv/" + request.args.get('key') + "?raw")
+    get_value = requests.get("http://consul-server:8500/v1/kv/" + request.args.get('key') + "?raw")
     return get_value.text
 
 
 @app.route('/set_value', methods=['POST', 'PUT'])
 def process_set_value():
-    ## TODO send post
+    for key, value in request.args.items():
+        uri =  requests.put(f"http://consul-server:8500/v1/kv/{key}", data=value)
+    return uri.text
