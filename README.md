@@ -4,6 +4,7 @@
 python-pip
 docker-compose (was tested on ubuntu20)
 curl
+user with privileges to run docker or sudo user (docker-compose then should be installed globally)
 ### TL;DR:
 1. Clone repo:  
  `git clone https://github.com/PavelPaladin/jencons-compose.git`  
