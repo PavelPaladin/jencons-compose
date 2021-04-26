@@ -7,7 +7,7 @@ curl
 1. Clone repo:
   `git clone https://github.com/PavelPaladin/jencons-compose.git`  
 
-2. Run:  
+2. Run in repo folder:  
  `D_ID=$(stat -c '%g' /var/run/docker.sock) D_SOCK=$(which docker) docker-compose up -d`  
  
 3. Open jenkins at localhost:8080 and run both jobs  
