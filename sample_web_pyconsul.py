@@ -7,7 +7,7 @@ app = Flask(__name__)
 
 @app.route('/get_value', methods=['GET'])
 def process_get_value():
-    get_value = requests.get("http://consul-server:8500/v1/kv/" + request.args.get('key') + "?raw")
+    get_value = requests.get(f"http://consul-server:8500/v1/kv/{request.args.get('key')}?raw")
     return get_value.text
 
 

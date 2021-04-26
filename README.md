@@ -18,7 +18,7 @@ user with privileges to run docker or sudo user (docker-compose then should be i
  `curl -X POST http://localhost:5000/set_value?some-key=some-value`
 
 5. Retrieve value at flask web app or:  
- `curl -X GET http://localhost:5000/v1/kv/some-key`  
+ `curl -X GET http://localhost:5000/v1/kv/key=some-key`  
 
 
 ## Development considerations
