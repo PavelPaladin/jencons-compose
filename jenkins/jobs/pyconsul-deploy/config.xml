@@ -13,7 +13,7 @@
   <concurrentBuild>false</concurrentBuild>
   <builders>
     <hudson.tasks.Shell>
-      <command>docker run --name sample_web_pyconsul --network hometask_default -d -p 5000:5000 sample_web_pyconsul</command>
+      <command>docker run --name sample_web_pyconsul --network jencons-compose_default -d -p 5000:5000 sample_web_pyconsul</command>
       <configuredLocalRules/>
     </hudson.tasks.Shell>
   </builders>
