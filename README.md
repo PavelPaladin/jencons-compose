@@ -7,7 +7,7 @@ curl
 user with privileges to run docker or sudo user (docker-compose then should be installed globally)
 ### TL;DR:
 1. Clone repo:  
- `git clone https://github.com/PavelPaladin/jencons-compose.git`  
+ `git clone https://github.com/PavelPaladin/jencons-compose.git && cd jencons-compose`  
 
 2. Run in repo folder:  
  `D_ID=$(stat -c '%g' /var/run/docker.sock) D_SOCK=$(which docker) docker-compose up -d`  
