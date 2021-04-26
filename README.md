@@ -1,6 +1,7 @@
 # Jenkins Consul Webapp for to retrive k/v
 ## Just MVP, do not use it anywhere
 ### Requirements:
+python-pip
 docker-compose (was tested on ubuntu20)
 curl
 ### TL;DR:
