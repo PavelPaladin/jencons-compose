@@ -1,6 +1,1 @@
-jenkins/*
-!jenkins/jobs
-jenkins/jobs/*
-!jenkins/jobs/*/config.xml
-
 __pycache__
